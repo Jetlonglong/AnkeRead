@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<litepal>
+    <dbname value = "AnkeRead" />
+    <version value = "1"/>
+    <list>
+        <mapping class = "cn.njcit.ankeread.DB.SearchHistory"/>
+        <mapping class="cn.njcit.ankeread.DB.Book"/>
+    </list>
+</litepal>

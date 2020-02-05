@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="cn.njcit.ankeread.ui.Fragment.shelf.ShelfFragment"
+        android:label="@string/title_shelf"
+        tools:layout="@layout/fragment_shelf" />
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="cn.njcit.ankeread.ui.Fragment.me.MeFragment"
+        android:label="@string/title_library"
+        tools:layout="@layout/fragment_me" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="cn.njcit.ankeread.ui.Fragment.library.LibraryFragment"
+        android:label="@string/title_me"
+        tools:layout="@layout/fragment_library" />
+</navigation>

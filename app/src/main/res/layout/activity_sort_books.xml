@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Activity.SortBooksActivity"
+    android:background="#F9F9F9">
+    <include
+        android:id="@+id/toolbar_sort_books"
+        layout="@layout/toolbar_main"/>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/sortBooks_tabLayout"
+        android:layout_below="@id/toolbar_sort_books"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FCFCFC"
+        app:tabIndicatorColor="#5DCAFF"
+        />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/sortBooks_viewPage"
+        android:layout_below="@id/sortBooks_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <View
+        android:layout_below="@id/sortBooks_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"/>
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Activity.SortActivity"
+    android:background="#F9F9F9">
+    <include
+        android:id="@+id/toolbar_sort"
+        layout="@layout/toolbar_main"/>
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/sort_tabLayout"
+        android:layout_below="@id/toolbar_sort"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FCFCFC"
+        app:tabIndicatorColor="#5DCAFF"
+        />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/sort_viewPage"
+        android:layout_below="@id/sort_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
