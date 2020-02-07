@@ -13,11 +13,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,9 +35,10 @@ import java.util.List;
 import java.util.Random;
 
 import cn.njcit.ankeread.Bean.BannerPic;
-import cn.njcit.ankeread.Bean.Hotmonth;
+import cn.njcit.ankeread.Bean.RankBean;
 import cn.njcit.ankeread.R;
 import cn.njcit.ankeread.http.Link;
+import cn.njcit.ankeread.ui.Activity.RankingActivity;
 import cn.njcit.ankeread.ui.Activity.SearchActivity;
 import cn.njcit.ankeread.ui.Activity.SortActivity;
 import cn.njcit.ankeread.ui.Adapter.QualityAdapter;
@@ -55,7 +53,7 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
     private Banner mTopBanner;
     private BannerLoader mBannerLoader = new BannerLoader();
     private List<BannerPic.ResultBean.ListBean> datas = new ArrayList<>();
-    private List<Hotmonth.BooksBean> books = new ArrayList<>();
+    private List<RankBean.BooksBean> books = new ArrayList<>();
     private TextView mTextSort;
     private TextView mTextRank;
     private TextView mTextCartoon;
@@ -79,7 +77,9 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
         mTextSort = (TextView) root.findViewById(R.id.text_sort);
         mTextSort.setOnClickListener(this);
         mTextRank = (TextView) root.findViewById(R.id.text_rank);
+        mTextRank.setOnClickListener(this);
         mTextCartoon = (TextView) root.findViewById(R.id.text_Cartoon);
+        mTextCartoon.setOnClickListener(this);
         mQuaRes = (TextView) root.findViewById(R.id.qua_res);
         mQuaRecy = (RecyclerView) root.findViewById(R.id.qua_recy);
         mQuaRes.setOnClickListener(this);
@@ -89,9 +89,9 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
     private void initData() {
         initBannerData();
         if (SaveUtils.getSex(mActivity).equals("男")){
-            initquaManData();
+            initQuaManData();
         }else {
-            initquaWomanData();
+            initQuaWomanData();
         }
 
     }
@@ -138,7 +138,7 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
         mTopBanner.start();
     }
 
-    private void initquaManData() {
+    private void initQuaManData() {
         mQuaLoading.setVisibility(View.VISIBLE);
         mQuaRecy.setVisibility(View.GONE);
         HttpUtils.httpGet(Link.MaleHotMonth, new Callback() {
@@ -160,8 +160,8 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void run() {
                         books.clear();
-                        Hotmonth hotmonth = gson.fromJson(string, Hotmonth.class);
-                        books.addAll(hotmonth.getBooks());
+                        RankBean rankBean = gson.fromJson(string, RankBean.class);
+                        books.addAll(rankBean.getBooks());
                         handler.sendEmptyMessage(2);
                         mQuaLoading.setVisibility(View.GONE);
                         mQuaRecy.setVisibility(View.VISIBLE);
@@ -171,7 +171,7 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
         });
     }
 
-    private void initquaWomanData() {
+    private void initQuaWomanData() {
         mQuaLoading.setVisibility(View.VISIBLE);
         mQuaRecy.setVisibility(View.GONE);
         HttpUtils.httpGet(Link.FeMaleHotMonth, new Callback() {
@@ -193,8 +193,8 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void run() {
                         books.clear();
-                        Hotmonth hotmonth = gson.fromJson(string, Hotmonth.class);
-                        books.addAll(hotmonth.getBooks());
+                        RankBean rankBean = gson.fromJson(string, RankBean.class);
+                        books.addAll(rankBean.getBooks());
                         handler.sendEmptyMessage(2);
                         mQuaLoading.setVisibility(View.GONE);
                         mQuaRecy.setVisibility(View.VISIBLE);
@@ -205,7 +205,7 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
     }
 
     private void getMore() {
-        List<Hotmonth.BooksBean> booksBeans = new ArrayList<>();
+        List<RankBean.BooksBean> booksBeans = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
             booksBeans.add(books.remove(new Random().nextInt(books.size())));
             Log.d("推荐", books.get(i).getTitle());
@@ -233,10 +233,10 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.qua_res:
-                if (SaveUtils.getSex(getContext()).equals("男")){
-                    initquaManData();
+                if (SaveUtils.getSex(mActivity).equals("男")){
+                    initQuaManData();
                 }else {
-                    initquaWomanData();
+                    initQuaWomanData();
                 }
                 Toast.makeText(mActivity, "请稍等哦....", Toast.LENGTH_SHORT).show();
                 break;
@@ -244,10 +244,10 @@ public class LibraryFragment extends Fragment implements View.OnClickListener {
                 mActivity.startActivity(new Intent(mActivity, SortActivity.class));
                 break;
             case R.id.text_rank:
-
+                mActivity.startActivity(new Intent(mActivity, RankingActivity.class));
                 break;
             case R.id.text_Cartoon:
-                Toast.makeText(mActivity, "先预留个按钮......5", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mActivity, "先预留个按钮.....", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

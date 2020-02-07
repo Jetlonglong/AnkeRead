@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -146,7 +147,7 @@ public class EndFragment extends Fragment implements SwipeRefreshLayout.OnRefres
         sortBookAdapter = new SortBookAdapter(mActivity, booksBeans);
         mEndBooksRec.setLayoutManager(new LinearLayoutManager(mActivity.getApplicationContext()));
         mEndBooksRec.setAdapter(sortBookAdapter);
-        mEndBooksRec.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        mEndBooksRec.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull final RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
@@ -162,6 +163,7 @@ public class EndFragment extends Fragment implements SwipeRefreshLayout.OnRefres
                                 getMore();
                                 mMoreLoading.setVisibility(View.VISIBLE);
                                 sortBookAdapter.notifyDataSetChanged();
+                                Log.d("总数", String.valueOf(sortBook.getTotal()));
                             }
                         }
                     }, 100);
@@ -171,7 +173,6 @@ public class EndFragment extends Fragment implements SwipeRefreshLayout.OnRefres
             @Override
             public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-
             }
         });
     }

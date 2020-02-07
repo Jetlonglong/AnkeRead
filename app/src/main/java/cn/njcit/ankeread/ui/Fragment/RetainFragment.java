@@ -147,7 +147,7 @@ public class RetainFragment extends Fragment implements SwipeRefreshLayout.OnRef
         sortBookAdapter = new SortBookAdapter(mActivity, booksBeans);
         mRetainBooksRec.setLayoutManager(new LinearLayoutManager(mActivity.getApplicationContext()));
         mRetainBooksRec.setAdapter(sortBookAdapter);
-        mRetainBooksRec.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        mRetainBooksRec.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull final RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);

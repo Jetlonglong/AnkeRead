@@ -13,10 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import cn.njcit.ankeread.Bean.Hotmonth;
+import cn.njcit.ankeread.Bean.RankBean;
 import cn.njcit.ankeread.R;
 import cn.njcit.ankeread.ui.Activity.SearchActivity;
 
@@ -27,10 +26,10 @@ import cn.njcit.ankeread.ui.Activity.SearchActivity;
  */
 public class QualityAdapter extends RecyclerView.Adapter<QualityAdapter.ViewHolder> {
 
-    private List<Hotmonth.BooksBean> books;
+    private List<RankBean.BooksBean> books;
     private Context context;
 
-    public QualityAdapter(List<Hotmonth.BooksBean> books, Context context) {
+    public QualityAdapter(List<RankBean.BooksBean> books, Context context) {
         this.books = books;
         this.context = context;
     }
@@ -44,7 +43,7 @@ public class QualityAdapter extends RecyclerView.Adapter<QualityAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Hotmonth.BooksBean book = books.get(position);
+        final RankBean.BooksBean book = books.get(position);
         Glide.with(context).load(book.getCover()).into(holder.qua_pic);
         holder.qua_name.setText(book.getTitle());
         holder.qua_author.setText(book.getAuthor());

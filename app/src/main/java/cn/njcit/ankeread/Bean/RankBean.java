@@ -7,7 +7,7 @@ import java.util.List;
  * <p>
  * 2020/1/28 - 14:30
  */
-public class Hotmonth {
+public class RankBean {
 
 
     private NodeBean node;

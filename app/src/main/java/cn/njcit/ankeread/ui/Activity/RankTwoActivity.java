@@ -3,7 +3,6 @@ package cn.njcit.ankeread.ui.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -13,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -23,58 +21,53 @@ import java.util.Arrays;
 import java.util.List;
 
 import cn.njcit.ankeread.R;
-import cn.njcit.ankeread.ui.Fragment.EndFragment;
-import cn.njcit.ankeread.ui.Fragment.HotFragment;
-import cn.njcit.ankeread.ui.Fragment.RetainFragment;
-import cn.njcit.ankeread.ui.Fragment.SerFragment;
-import cn.njcit.ankeread.ui.Fragment.SortmanFragment;
-import cn.njcit.ankeread.ui.Fragment.SortpublishFragment;
-import cn.njcit.ankeread.ui.Fragment.SortwomanFragment;
+import cn.njcit.ankeread.ui.Fragment.MonthFragment;
+import cn.njcit.ankeread.ui.Fragment.TotalFragment;
+import cn.njcit.ankeread.ui.Fragment.WeekFragment;
 
-public class SortBooksActivity extends AppCompatActivity {
+public class RankTwoActivity extends AppCompatActivity {
 
     private TextView mMTitle;
     private Toolbar mToolbar;
-    private TabLayout mSortBooksTabLayout;
-    private ViewPager mSortBooksViewPage;
+    private TabLayout mRankTwoTabLayout;
+    private ViewPager mRankTwoViewPage;
     private List<String> mTitle = new ArrayList<>();
     private List<Fragment> mFragment = new ArrayList<>();
-    private String index;
-    private String sort;
+    private int index =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sort_books);
+        setContentView(R.layout.activity_rank_two);
         initView();
         initListener();
     }
 
     private void initView() {
         Intent intent = getIntent();
-        index = intent.getStringExtra("index");
-        sort = intent.getStringExtra("sort");
+        index = intent.getIntExtra("index",1);
         mMTitle = (TextView) findViewById(R.id.mTitle);
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mSortBooksTabLayout = (TabLayout) findViewById(R.id.sortBooks_tabLayout);
-        mSortBooksViewPage = (ViewPager) findViewById(R.id.sortBooks_viewPage);
+        mRankTwoTabLayout = (TabLayout) findViewById(R.id.rankTwo_tabLayout);
+        mRankTwoViewPage = (ViewPager) findViewById(R.id.rankTwo_viewPage);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         mMTitle = (TextView) findViewById(R.id.mTitle);
         mToolbar.setTitle("");
-        mMTitle.setText(sort);
-        mTitle = Arrays.asList(getResources().getStringArray(R.array.tab_name2));
-        mFragment.add(new HotFragment(index,sort));
-        mFragment.add(new RetainFragment(index,sort));
-        mFragment.add(new SerFragment(index,sort));
-        mFragment.add(new EndFragment(index,sort));
+        mMTitle.setText(intent.getStringExtra("name"));
+        mTitle = Arrays.asList(getResources().getStringArray(R.array.tab_name3));
+        mFragment.add(new WeekFragment(index));
+        mFragment.add(new MonthFragment(index));
+        mFragment.add(new TotalFragment(index));
     }
-    private void iniData(){
+
+    private void initData(){
 
     }
+
     private void initListener(){
-        mSortBooksViewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mRankTwoViewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -90,7 +83,7 @@ public class SortBooksActivity extends AppCompatActivity {
 
             }
         });
-        mSortBooksViewPage.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        mRankTwoViewPage.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -108,8 +101,8 @@ public class SortBooksActivity extends AppCompatActivity {
                 return mTitle.get(position);
             }
         });
-        mSortBooksTabLayout.setupWithViewPager(mSortBooksViewPage);
-        mSortBooksTabLayout.setTabTextColors(Color.parseColor("#AEAEAF"),Color.parseColor("#5DCAFF"));
+        mRankTwoTabLayout.setupWithViewPager(mRankTwoViewPage);
+        mRankTwoTabLayout.setTabTextColors(Color.parseColor("#AEAEAF"),Color.parseColor("#5DCAFF"));
     }
 
     @Override
@@ -121,5 +114,4 @@ public class SortBooksActivity extends AppCompatActivity {
         }
         return true;
     }
-
 }

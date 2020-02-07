@@ -145,7 +145,7 @@ public class SerFragment extends Fragment implements SwipeRefreshLayout.OnRefres
         sortBookAdapter = new SortBookAdapter(mActivity, booksBeans);
         mSerBooksRec.setLayoutManager(new LinearLayoutManager(mActivity.getApplicationContext()));
         mSerBooksRec.setAdapter(sortBookAdapter);
-        mSerBooksRec.setOnScrollListener(new RecyclerView.OnScrollListener() {
+        mSerBooksRec.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull final RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);

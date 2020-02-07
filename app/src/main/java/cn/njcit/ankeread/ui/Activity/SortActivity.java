@@ -64,6 +64,7 @@ public class SortActivity extends AppCompatActivity {
     private void initData(){
 
     }
+
     private void initListener(){
         mSortViewPage.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override

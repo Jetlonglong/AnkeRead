@@ -91,10 +91,21 @@ public class Link {
     public static String UpdateJson = "http://json.apiopen.top/updateJson";
     //图标
     public static String Icon = "http://json.apiopen.top/getAnkeicon";
-    //男生月榜
+
+    //男生最热周榜
+    public static String MaleHotWeek = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-week";
+    //女生最热周榜
+    public static String FeMaleHotWeek = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-female-hot-week";
+    //男生最热月榜
     public static String MaleHotMonth = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-month";
-    //女生月榜
+    //女生最热月榜
     public static String FeMaleHotMonth = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-female-hot-month";
+    //男生最热总榜
+    public static String MaleHotTotal = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-total";
+    //女生最热总榜
+    public static String FeMaleHotTotal = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-female-hot-total";
+
+
     //分类下小说
     public static String SortList = "http://lunbo.wgfgr.cn/book/list";
 }

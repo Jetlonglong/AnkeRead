@@ -83,7 +83,7 @@ public class HotFragment extends Fragment implements SwipeRefreshLayout.OnRefres
                 mActivity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(getActivity(), "获取失败...请截图联系管理员.." + e, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(mActivity, "获取失败...请截图联系管理员.." + e, Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -146,7 +146,7 @@ public class HotFragment extends Fragment implements SwipeRefreshLayout.OnRefres
         sortBookAdapter = new SortBookAdapter(mActivity, booksBeans);
         mHotBooksRec.setLayoutManager(new LinearLayoutManager(mActivity.getApplicationContext()));
         mHotBooksRec.setAdapter(sortBookAdapter);
-        mHotBooksRec.setOnScrollListener(new OnScrollListener() {
+        mHotBooksRec.addOnScrollListener(new OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull final RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
