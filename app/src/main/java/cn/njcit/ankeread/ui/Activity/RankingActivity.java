@@ -53,38 +53,34 @@ public class RankingActivity extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
+        Intent intent = new Intent(this,RankTwoActivity.class);
         switch (v.getId()) {
             default:
                 break;
             case R.id.viewHot:
-                Intent intent = new Intent(this,RankTwoActivity.class);
                 intent.putExtra("name","最热榜");
                 intent.putExtra("index",0);
                 startActivity(intent);
                 break;
             case R.id.viewHotSearch:
-                Intent intent2 = new Intent(this,RankTwoActivity.class);
-                intent2.putExtra("name","热搜榜");
-                intent2.putExtra("index",1);
-                startActivity(intent2);
+                intent.putExtra("name","热搜榜");
+                intent.putExtra("index",1);
+                startActivity(intent);
                 break;
             case R.id.viewPotential:
-                Intent intent3 = new Intent(this,RankTwoActivity.class);
-                intent3.putExtra("name","潜力榜");
-                intent3.putExtra("index",2);
-                startActivity(intent3);
+                intent.putExtra("name","潜力榜"); 
+                intent.putExtra("index",2);
+                startActivity(intent);
                 break;
             case R.id.viewRetain:
-                Intent intent4 = new Intent(this,RankTwoActivity.class);
-                intent4.putExtra("name","留存榜");
-                intent4.putExtra("index",3);
-                startActivity(intent4);
+                intent.putExtra("name","留存榜");
+                intent.putExtra("index",3);
+                startActivity(intent);
                 break;
             case R.id.viewEnd:
-                Intent intent5 = new Intent(this,RankTwoActivity.class);
-                intent5.putExtra("name","完结榜");
-                intent5.putExtra("index",4);
-                startActivity(intent5);
+                intent.putExtra("name","完结榜");
+                intent.putExtra("index",4);
+                startActivity(intent);
                 break;
         }
     }

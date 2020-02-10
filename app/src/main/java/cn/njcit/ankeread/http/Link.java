@@ -10,19 +10,19 @@ public class Link {
     /*
     搜索小说
     联想搜索：
-    http://lunbo.wgfgr.cn/search/suggest?key=武神
+    http://api.gdugm.cn//search/suggest?key=武神
     全部搜索：
-    http://lunbo.wgfgr.cn/book/search?key=武神&start=0&limit=100
+    http://api.gdugm.cn//book/search?key=武神&start=0&limit=100
                 要记住ID，下面获取小说信息和章节需要   start为起始位置 limit为获取个数
 
 
                 获取小说信息
-                http://lunbo.wgfgr.cn/book/info?bookId=539344b9bbdb8ce13bf66cd9
+                http://api.gdugm.cn//book/info?bookId=539344b9bbdb8ce13bf66cd9
                 小说封面在小说信息里面有
 
 
                 获取章节内容
-                http://lunbo.wgfgr.cn/toc/mix?bookId=539344b9bbdb8ce13bf66cd9
+                http://api.gdugm.cn//toc/mix?bookId=539344b9bbdb8ce13bf66cd9
 
 
                 获取每章内容
@@ -30,10 +30,10 @@ public class Link {
                 标红为章节地址，必须要经过URL编码处理才能获取到内容
 
                 大家都在搜
-                http://lunbo.wgfgr.cn/node/info?nodeAlias=hot-word
+                http://api.gdugm.cn//node/info?nodeAlias=hot-word
 
                 分类
-                http://lunbo.wgfgr.cn/book/list?gender=male&type=1&major=玄幻&start=0&limit=50
+                http://api.gdugm.cn//book/list?gender=male&type=1&major=玄幻&start=0&limit=50
                 gender 性别:
                     男-male  女-female    出版-press
                 type 类别：
@@ -46,33 +46,33 @@ public class Link {
                 limit 获取个数
 
                 最热榜
-                周榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-week
-                月榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-month
-                总榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-total
+                周榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hot-week
+                月榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hot-month
+                总榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hot-total
 
 
                 热搜榜
-                周榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hotsearch-week
-                月榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hotsearch-month
-                总榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hotsearch-total
+                周榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hotsearch-week
+                月榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hotsearch-month
+                总榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hotsearch-total
 
 
                 潜力榜
-                周榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-potenial-week
-                月榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-potenial-month
-                总榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-potenial-total
+                周榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-potenial-week
+                月榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-potenial-month
+                总榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-potenial-total
 
 
                 留存榜
-                周榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-remain-week
-                月榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-remain-month
-                总榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-remain-total
+                周榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-remain-week
+                月榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-remain-month
+                总榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-remain-total
 
 
                 完结榜
-                周榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-finish-week
-                月榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-finish-month
-                总榜    http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-finish-total
+                周榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-finish-week
+                月榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-finish-month
+                总榜    http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-finish-total
      */
 
     //总API
@@ -80,7 +80,7 @@ public class Link {
     //小说搜索
     public static String Search = "http://api.pingcc.cn/?xsname=";
     //热搜关键词
-    public static String HotWord = "http://lunbo.wgfgr.cn/node/info?nodeAlias=hot-word";
+    public static String HotWord = "http://api.gdugm.cn//node/info?nodeAlias=hot-word";
     //详情
     public static String Info = "http://api.pingcc.cn/?xsurl1=";
     //内容
@@ -93,19 +93,19 @@ public class Link {
     public static String Icon = "http://json.apiopen.top/getAnkeicon";
 
     //男生最热周榜
-    public static String MaleHotWeek = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-week";
+    public static String MaleHotWeek = "http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hot-week";
     //女生最热周榜
-    public static String FeMaleHotWeek = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-female-hot-week";
+    public static String FeMaleHotWeek = "http://api.gdugm.cn//node/info?nodeAlias=rankinglist-female-hot-week";
     //男生最热月榜
-    public static String MaleHotMonth = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-month";
+    public static String MaleHotMonth = "http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hot-month";
     //女生最热月榜
-    public static String FeMaleHotMonth = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-female-hot-month";
+    public static String FeMaleHotMonth = "http://api.gdugm.cn//node/info?nodeAlias=rankinglist-female-hot-month";
     //男生最热总榜
-    public static String MaleHotTotal = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-male-hot-total";
+    public static String MaleHotTotal = "http://api.gdugm.cn//node/info?nodeAlias=rankinglist-male-hot-total";
     //女生最热总榜
-    public static String FeMaleHotTotal = "http://lunbo.wgfgr.cn/node/info?nodeAlias=rankinglist-female-hot-total";
+    public static String FeMaleHotTotal = "http://api.gdugm.cn//node/info?nodeAlias=rankinglist-female-hot-total";
 
 
     //分类下小说
-    public static String SortList = "http://lunbo.wgfgr.cn/book/list";
+    public static String SortList = "http://api.gdugm.cn/book/list";
 }
