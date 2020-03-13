@@ -15,18 +15,19 @@
         android:id="@+id/qua_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="斗罗大陆aaaa"
+        android:text="斗罗大陆aaaaaaaaaa"
         android:singleLine="true"
         android:textSize="15dp"
         android:maxEms="5"
         android:ellipsize="end"
         android:layout_marginTop="5dp"
         android:textColor="#000"/>
+
     <TextView
         android:id="@+id/qua_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
         android:text="唐家三少"
-        android:textSize="10dp"
-        android:layout_marginTop="1dp" />
+        android:textSize="10dp" />
 </LinearLayout>

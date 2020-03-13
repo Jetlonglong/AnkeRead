@@ -3,7 +3,15 @@ package cn.njcit.ankeread;
 import android.app.Application;
 
 
+import org.jetbrains.annotations.NotNull;
 import org.litepal.LitePal;
+
+import java.io.IOException;
+
+import cn.njcit.ankeread.utils.HttpUtils;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.Response;
 
 /**
  * Create by ankele

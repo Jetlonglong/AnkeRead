@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="cn.njcit.ankeread.ui.Fragment.shelf.ShelfFragment"
+        android:name="cn.njcit.ankeread.ui.fragment.shelf.ShelfFragment"
         android:label="@string/title_shelf"
         tools:layout="@layout/fragment_shelf" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="cn.njcit.ankeread.ui.Fragment.me.MeFragment"
+        android:name="cn.njcit.ankeread.ui.fragment.me.MeFragment"
         android:label="@string/title_library"
         tools:layout="@layout/fragment_me" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="cn.njcit.ankeread.ui.Fragment.library.LibraryFragment"
+        android:name="cn.njcit.ankeread.ui.fragment.library.LibraryFragment"
         android:label="@string/title_me"
         tools:layout="@layout/fragment_library" />
 </navigation>

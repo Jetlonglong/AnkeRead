@@ -1,7 +1,5 @@
 package cn.njcit.ankeread;
 
-import android.content.res.AssetManager;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -17,9 +15,9 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import cn.njcit.ankeread.ui.Fragment.LibraryFragment;
-import cn.njcit.ankeread.ui.Fragment.MeFragment;
-import cn.njcit.ankeread.ui.Fragment.ShelfFragment;
+import cn.njcit.ankeread.ui.fragment.LibraryFragment;
+import cn.njcit.ankeread.ui.fragment.MeFragment;
+import cn.njcit.ankeread.ui.fragment.ShelfFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

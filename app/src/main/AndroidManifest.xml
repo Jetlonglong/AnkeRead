@@ -16,27 +16,27 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".ui.Activity.RankTwoActivity"
+            android:name=".ui.activity.RankTwoActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".ui.Activity.RankingActivity"
+            android:name=".ui.activity.RankingActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.Activity.SortBooksActivity"
+            android:name=".ui.activity.SortBooksActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.Activity.SortActivity"
+            android:name=".ui.activity.SortActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.Activity.DetailsActivity"
+            android:name=".ui.activity.DetailsActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.Activity.SplashActivity"
+            android:name=".ui.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.Activity.SearchActivity"
+            android:name=".ui.activity.SearchActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
